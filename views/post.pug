@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h4= locals.title
+
+    table
+        tr
+            td
+                p String Search Test
+                p Find the Search Word in the Test String
+                p Where was it found, which word?
+                form(method="POST", action="/post/find")
+                    table(style='border: 2px solid darkgreen')
+                        tr
+                            td Test String
+                            td
+                                input(type="text", name="text3" value=text3)
+                        tr
+                            td Search Word
+                            td
+                                input(type="text", name="findWord" value=findWord)
+                        tr
+                            td
+                                input(type="submit", value="Find")
+                            td
+                                p= findResult
